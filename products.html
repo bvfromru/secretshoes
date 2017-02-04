@@ -2,9 +2,619 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>FooseShoes</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style_min.css" rel="stylesheet">
   </head>
   <body>
-    
+    <svg style="display: none">
+      <symbol id="buy-icon" viewBox="0 0 16 15.03">
+        <path d="M481.5,1585.19a1.4,1.4,0,1,1-1.391,1.4A1.4,1.4,0,0,1,481.5,1585.19Zm5-.03a1.43,1.43,0,1,1-1.422,1.43A1.426,1.426,0,0,1,486.5,1585.16Zm2.8-9.07a1,1,0,0,0-1.252.66s-1,2.5-1.5,4.29a1.312,1.312,0,0,1-1.477,1.03h-2.125a1.468,1.468,0,0,1-1.477-1.03c-0.916-1.8-2.44-5.05-2.44-5.05a1.631,1.631,0,0,0-1.363-.95H475a1.005,1.005,0,0,0,0,2.01h2.248l2.8,5.54a2.341,2.341,0,0,0,2.081,1.49h3.843a1.953,1.953,0,0,0,2.175-1.49l1.808-5.24a1.008,1.008,0,0,0-.657-1.26h0Zm-6.3-.04v-2.03a1,1,0,1,1,2,0v2.03h2.536L484,1579.6l-3.535-3.55H483Z" transform="translate(-474 -1573)"/>
+      </symbol>
+      <symbol id="cart-icon" viewBox="0 0 16 13.031">
+        <path d="M1109.5,80.183a1.4,1.4,0,1,1-1.39,1.4A1.394,1.394,0,0,1,1109.5,80.183Zm5-.031a1.432,1.432,0,1,1-1.42,1.432A1.422,1.422,0,0,1,1114.5,80.152Zm2.8-9.1a1.007,1.007,0,0,0-1.26.66s-0.99,2.513-1.5,4.31a1.315,1.315,0,0,1-1.48,1.029h-2.12a1.472,1.472,0,0,1-1.48-1.038c-0.91-1.8-2.44-5.056-2.44-5.056a1.632,1.632,0,0,0-1.36-.956H1103a1.007,1.007,0,0,0,0,2.014h2.25l2.8,5.56a2.328,2.328,0,0,0,2.08,1.491h3.84a1.962,1.962,0,0,0,2.18-1.491l1.8-5.26a1.007,1.007,0,0,0-.65-1.262c-0.53-.166.52,0.166,0,0s0.52,0.166,0,0S1117.82,71.22,1117.3,71.054Z" transform="translate(-1102 -70)"/>
+      </symbol>
+      <symbol id="facebook-icon" viewBox="0 0 9 19.19">
+        <path d="M940.158,2179.47v3.09s-2.271-.23-2.84.65c-0.31.47-.126,1.87-0.154,2.87h3.013c-0.255,1.17-.437,1.97-0.624,2.98h-2.4v9.59h-4.173c0-2.96,0-6.41,0-9.55H931.2v-3.02h1.756c0.09-2.21.124-4.39,1.218-5.5C935.4,2179.32,936.575,2179.47,940.158,2179.47Z" transform="translate(-931.188 -2179.47)"/>
+      </symbol>
+      <symbol id="flickr-icon" viewBox="0 0 19.21 7.82">
+        <path d="M1110.36,2188.97a4,4,0,1,1-3.99-3.9A3.953,3.953,0,0,1,1110.36,2188.97Zm11.22,0a4,4,0,1,1-4-3.9A3.955,3.955,0,0,1,1121.58,2188.97Z" transform="translate(-1102.38 -2185.06)"/>
+      </symbol>
+      <symbol id="googleplus-icon" viewBox="0 0 19.18 16.28">
+        <path d="M1024.94,2182.24h-1.35a3.646,3.646,0,0,1,1.56,3.1c-0.07,1.49-1.01,2.09-1.88,2.79a2.355,2.355,0,0,0-.58.7c-0.31.82,0.53,1.29,0.96,1.61,0.39,0.29.73,0.55,1.03,0.81a3.023,3.023,0,0,1,1.24,2.45,3.51,3.51,0,0,1-1.62,2.85,7.025,7.025,0,0,1-3.32,1.15,8,8,0,0,1-3.88-.51,2.832,2.832,0,0,1-1.93-2.51,2.74,2.74,0,0,1,.66-1.75c1.77-1.97,3.03-1.66,5.34-1.83a6,6,0,0,1-.58-0.91,1.765,1.765,0,0,1,.15-1.36,4.066,4.066,0,0,1-3.45-1,3.225,3.225,0,0,1-.92-3,3.813,3.813,0,0,1,1.67-2.4,5.563,5.563,0,0,1,3.19-.96h5.14m-7.96,2.01a4.45,4.45,0,0,0,.25,2.8,3.378,3.378,0,0,0,1.5,1.8,2.22,2.22,0,0,0,2.81-.89,2.555,2.555,0,0,0,.19-0.86,4.4,4.4,0,0,0-1.8-3.9,2.2,2.2,0,0,0-1.26-.22A1.952,1.952,0,0,0,1018.41,2183.48Zm-0.16,8.93a2.169,2.169,0,0,0-.98,1.12,2.32,2.32,0,0,0-.04,1.33c0.33,1.15,1.69,1.81,3.12,1.94,1.54,0.13,3.1-.11,3.77-1.2a2.081,2.081,0,0,0,.01-2.05,4.755,4.755,0,0,0-1.61-1.42,2.117,2.117,0,0,0-.62-0.42,3.369,3.369,0,0,0-.71,0A6.128,6.128,0,0,0,1018.25,2192.41Zm11.93-10.92h1.16c0,1-.02,1.98-0.02,2.98,0.98,0.04,2-.01,3.02,0v1.19h-2.98c0,1.03-.02,1.97-0.02,3h-1.14c0-1.02-.02-1.98-0.02-3-0.99-.04-1.99.01-3.01,0v-1.19h2.99c0-.99.02-1.93,0.02-2.92C1030.18,2181.52,1030.16,2181.5,1030.18,2181.49Z" transform="translate(-1015.16 -2181.47)"/>
+      </symbol>
+      <symbol id="linkedin-icon" viewBox="0 0 17.97 18.59">
+        <path d="M1059.3,2185.43h3.46v13.04h-3.46v-13.04Zm16.38,0.75a4.336,4.336,0,0,1,1.28,3.51v8.78h-3.49v-7.93a3.548,3.548,0,0,0-.28-1.58,1.907,1.907,0,0,0-1.9-1,2.36,2.36,0,0,0-2.36,1.47,5.115,5.115,0,0,0-.33,1.98v7.06h-3.07v-13.2h2.96v2.09a5.941,5.941,0,0,1,1.24-1.45,4.267,4.267,0,0,1,2.66-.79A4.963,4.963,0,0,1,1075.68,2186.18Zm-12.47-4.2a2.11,2.11,0,1,1-2.11-2.11A2.119,2.119,0,0,1,1063.21,2181.98Z" transform="translate(-1059 -2179.88)"/>
+      </symbol>
+      <symbol id="search-icon" viewBox="0 0 13.939 14">
+        <path d="M1006.68,27.279l-2.78-2.772a6.005,6.005,0,1,0-1.42,1.409l2.78,2.777A1,1,0,1,0,1006.68,27.279Zm-7.649-2.265a4,4,0,1,1,4-4A4,4,0,0,1,999.031,25.014Z" transform="translate(-993.031 -15)"/>
+      </symbol>
+      <symbol id="share-icon" viewBox="0 0 16 13">
+        <path d="M435.973,1582s1.539-2.44,6.987-2.44V1582l5.04-3.98-5.04-4.02s0,2.34,0,2.34C442.831,1576.34,435.973,1576.63,435.973,1582Zm9.027,1c-0.021,0,0,.45,0,1h-0.01v2h-12v-10H437c0.553,0,1,.02,1,0a1,1,0,0,0-1-1h-3.01a2,2,0,0,0-2,2v8a2,2,0,0,0,2,2h10a1.991,1.991,0,0,0,1.991-1.9c0-.04.019-0.07,0.019-0.1v-1A1,1,0,0,0,445,1583Z" transform="translate(-432 -1574)"/>
+      </symbol>
+      <symbol id="star-icon" viewBox="0 0 16 16">
+        <path d="M1027.93,73.969a1.172,1.172,0,0,0-.92-0.779l-4.16-.638-1.81-3.871a1.144,1.144,0,0,0-2.08,0l-1.81,3.871-4.16.638a1.172,1.172,0,0,0-.92.779,1.184,1.184,0,0,0,.27,1.178l3.05,3.139-0.71,4.355a1.166,1.166,0,0,0,.47,1.135,1.162,1.162,0,0,0,1.23.067l3.62-2.014,3.62,2.014a1.162,1.162,0,0,0,1.23-.067,1.166,1.166,0,0,0,.47-1.135l-0.71-4.355,3.05-3.139A1.184,1.184,0,0,0,1027.93,73.969Zm-4.14,3.507a1.145,1.145,0,0,0-.31,1l0.7,4.355-3.62-2.014a1.157,1.157,0,0,0-1.12,0l-3.62,2.014,0.71-4.355a1.181,1.181,0,0,0-.32-1l-3.04-3.139,4.15-.639a1.149,1.149,0,0,0,.87-0.653l1.81-3.871,1.81,3.871a1.149,1.149,0,0,0,.87.653l4.15,0.639Z" transform="translate(-1012 -68)"/>
+      </symbol>
+      <symbol id="twitter-icon" viewBox="0 0 19.188 15.9">
+        <path d="M989.952,2183.12c-0.092.72-1.138,1.45-1.772,2,0.626,9.21-9.824,14.96-17.417,10.29,2.129,0.02,4.527-.57,5.794-1.77-1.842-.3-3.147-1.13-3.653-2.77a4.842,4.842,0,0,0,1.661-.11c-1.685-.64-3.018-1.63-3.1-3.87a5.762,5.762,0,0,0,1.66.33,4.492,4.492,0,0,1-1.217-5.31,11.849,11.849,0,0,0,8.3,4.2c-0.957-4.07,4.437-6.59,6.864-3.65a13.712,13.712,0,0,0,2.545-.89,5.288,5.288,0,0,1-1.66,2.11A6.106,6.106,0,0,0,989.952,2183.12Z" transform="translate(-970.75 -2181.19)"/>
+      </symbol>
+      <symbol id="view-icon" viewBox="0 0 16 10">
+        <path d="M768.983,451.89c-0.006-.021,0-0.043-0.011-0.064a0.239,0.239,0,0,0-.013-0.021c0-.012,0-0.025-0.01-0.037a9.008,9.008,0,0,0-15.9,0,0.259,0.259,0,0,0-.011.037c0,0.008-.01.013-0.013,0.022a0.449,0.449,0,0,0-.01.064A0.476,0.476,0,0,0,753,452a0.484,0.484,0,0,0,.018.112,0.472,0.472,0,0,0,.01.064c0,0.008.01,0.013,0.013,0.021a0.259,0.259,0,0,0,.011.037,9.008,9.008,0,0,0,15.9,0,0.329,0.329,0,0,0,.01-0.037,0.148,0.148,0,0,0,.013-0.021c0.008-.021,0-0.043.011-0.064A0.377,0.377,0,0,0,768.983,451.89ZM761,456a8.258,8.258,0,0,1-7-4,8.124,8.124,0,0,1,14,0A8.261,8.261,0,0,1,761,456Zm0-6h0a2,2,0,0,0-2,2,0.25,0.25,0,1,0,.5,0,1.5,1.5,0,0,1,1.5-1.5h0A0.25,0.25,0,0,0,761,450Zm-0.012-1.5a3.5,3.5,0,1,0,3.5,3.5A3.5,3.5,0,0,0,760.988,448.5Zm0,6.51a3,3,0,1,1,3-3A3.008,3.008,0,0,1,760.988,455.007Z" transform="translate(-753 -447)"/>
+      </symbol>
+      <symbol id="wishlist-icon" viewBox="0 0 16 15.5">
+        <path d="M405.927,1578.03a1.136,1.136,0,0,0-.92-0.75l-4.156-.62-1.807-3.75a1.163,1.163,0,0,0-2.088,0l-1.807,3.75-4.156.62a1.136,1.136,0,0,0-.92.75,1.1,1.1,0,0,0,.268,1.14l3.046,3.04-0.706,4.22a1.107,1.107,0,0,0,.473,1.1,1.149,1.149,0,0,0,.664.21,1.228,1.228,0,0,0,.559-0.14l3.623-1.95,3.624,1.95a1.221,1.221,0,0,0,.558.14,1.152,1.152,0,0,0,.664-0.21,1.11,1.11,0,0,0,.474-1.1l-0.707-4.22,3.046-3.04A1.1,1.1,0,0,0,405.927,1578.03Zm-4.139,3.4a1.1,1.1,0,0,0-.313.97l0.707,4.21-3.624-1.95a1.182,1.182,0,0,0-1.116,0l-3.624,1.95,0.707-4.21a1.1,1.1,0,0,0-.312-0.97l-3.046-3.04,4.156-.62a1.153,1.153,0,0,0,.87-0.63l1.807-3.75,1.807,3.75a1.153,1.153,0,0,0,.87.63l4.156,0.62Z" transform="translate(-390 -1572.25)"/>
+      </symbol>
+      <symbol id="tile-icon" viewBox="0 0 15 15">
+        <path d="M889,493h5a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1h-5a1,1,0,0,1-1-1v-5A1,1,0,0,1,889,493Zm8,0h5a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1h-5a1,1,0,0,1-1-1v-5A1,1,0,0,1,897,493Zm-8,8h5a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1h-5a1,1,0,0,1-1-1v-5A1,1,0,0,1,889,501Zm8,0h5a1,1,0,0,1,1,1v5a1,1,0,0,1-1,1h-5a1,1,0,0,1-1-1v-5A1,1,0,0,1,897,501Z" transform="translate(-888 -493)"/>
+      </symbol>
+      <symbol id="table-icon" viewBox="0 0 16 12">
+        <path d="M928,494a1,1,0,1,1-1,1A1,1,0,0,1,928,494Zm0,5a1,1,0,1,1-1,1A1,1,0,0,1,928,499Zm0,5a1,1,0,1,1-1,1A1,1,0,0,1,928,504Zm4-10h10a1,1,0,0,1,0,2H932A1,1,0,0,1,932,494Zm0,5h10a1,1,0,0,1,0,2H932A1,1,0,0,1,932,499Zm0,5h10a1,1,0,0,1,0,2H932A1,1,0,0,1,932,504Z" transform="translate(-927 -494)"/>
+      </symbol>
+    </svg>
+    <header class="main-header">
+      <div class="user-wrapper">
+        <div class="container clearfix">
+          <a class="header-logo" href="#">
+            <h1>Foose Shoes</h1>
+            <img src="img/logo.png" alt="FooseShoes logo" width="156" height="20">
+          </a>
+          <a class="header-login" href="#">LOGIN or REGISTER</a>
+          <a class="header-search" href="#">Search
+            <svg class="header-search-icon">
+	            <use xlink:href="#search-icon"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      <div class="main-menu-wrapper">
+        <div class="container clearfix">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a class="current">Products</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="cart-menu">
+            <ul>
+              <li><a class="cart-menu-item  wishlist" href="#">
+                <svg class="star-icon">
+					        <use xlink:href="#star-icon"></use>
+                </svg>
+                <span>30</span></a>
+              </li>
+              <li><a class="cart-menu-item  cart" href="#">
+                <svg class="cart-icon">
+                  <use xlink:href="#cart-icon"></use>
+                </svg>
+                <span>0</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slider-wrapper">
+        <div class="container">
+          <div class="slider-small-info">
+            <div class="slider-small-price">$145,99</div>
+            <h2>Pink Shoes 2013 Collection</h2>
+            <p>Nunc non fermentum nunc. Sed ut ante
+            eget leo tempor consequat sit amet eu orci.
+            Donec dignissim dolor eget..</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <aside class="filter-selection">
+        <div class="container">
+          <ul>
+            <li class="filter-selection-item"><span>Shop by</span></li>
+            <li class="filter-selection-item"><a class="filter-brands" id="filter-brands" href="#">Brands</a>
+              <div class="hover-menu">
+                <ul>
+                  <li><a href="">Buffalo Decolette</a></li>
+                  <li><a href="">Even&amp;Odd</a></li>
+                  <li><a href="">Prada</a></li>
+                  <li><a href="">Cassadei</a></li>
+                  <li><a href="">Mellow Yellow</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="filter-selection-item"><a class="filter-categories" id="filter-categories" href="#">Categories</a></li>
+            <li class="filter-selection-item"><a class="filter-price" id="filter-price" href="#">Price</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <article class="catalog-main  container">
+        <div class="catalog-caption  clearfix">
+          <div class="breadcrumbs">
+          <h2>All Products</h2>
+          <ul class="breadcrumbs-links">
+            <li><a href="#">Home</a></li>
+            <li><span>All products</span></li>
+          </ul>
+          </div>
+          <div class="filter-sort">
+            <span>View as</span>
+            <ul>
+              <li class="current-view">
+                <a class="tile-view" id="tile-view" href="#">Tile view
+                  <svg class="tile-icon" width="15" height="15" viewBox="0 0 15 15">
+                    <use xlink:href="#tile-icon"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="table-view" id="table-view"  href="#">Table view
+                  <svg width="16" height="12" viewBox="0 0 16 12">
+                    <use xlink:href="#table-icon"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="sort-alphabetically" id="sort-alphabetically" href="#">Sort alphabetically</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="catalog-items">
+          <section class="item">
+            <img src="img/item01.jpg" alt="Even and Odd" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Even&amp;Odd
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="item  onsale">
+            <img src="img/item02.jpg" alt="Even and Odd" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Even&amp;Odd
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="item">
+            <img src="img/item03.jpg" alt="Bufallo Decolette" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Buffalo Decolette
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="item">
+            <img src="img/item04.jpg" alt="Even and Odd" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Even&amp;Odd
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="item">
+            <img src="img/item05.jpg" alt="Even and Odd" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Even&amp;Odd
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="item  outofstock">
+            <img src="img/item06.jpg" alt="Bufallo Decolette" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Buffalo Decolette
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="item">
+            <img src="img/item01.jpg" alt="Even and Odd" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Even&amp;Odd
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="item  onsale">
+            <img src="img/item02.jpg" alt="Even and Odd" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Even&amp;Odd
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="item">
+            <img src="img/item03.jpg" alt="Bufallo Decolette" width="300" height="220">
+            <span class="item-price">$145,99</span>
+            <div class="item-description">Buffalo Decolette
+              <ul class="item-buttons">
+                <li>
+                  <a href="#">
+                    <svg  class="view-icon  actions-icon"  height="10" viewbox="0 0 16 10" width="16">
+                      <use xlink:href="#view-icon"></use>
+                    </svg>
+                  View</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="wishlist-icon  actions-icon" height="16" viewbox="0 0 16 16" width="16">
+                      <use xlink:href="#wishlist-icon"></use>
+                    </svg>
+                  Add to wishlist</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="share-icon  actions-icon" height="13" viewbox="0 0 16 13" width="16">
+                      <use xlink:href="#share-icon"></use>
+                    </svg>
+                   Share</a>
+                 </li>
+                <li>
+                  <a href="#">
+                    <svg class="buy-icon  actions-icon" height="15.031" viewbox="0 0 16 15.031" width="16">
+                      <use xlink:href="#buy-icon"></use>
+                    </svg>
+                  Buy</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+      </article>
+
+      <div class="addon  container  clearfix">
+        <div class="addon-column  shipping">
+          <h2>FREE SHIPPING</h2>
+          <p>Vivamus metus turpis, bibendum vitae euismod vel, vulputate vel nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec erat sem, </p>
+        </div>
+        <div class="addon-column  testimonials">
+          <h2>TESTIMONIALS</h2>
+          <p>vel, vulputate vel nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec erat sem, vehicula id dictum sit [...]</p>
+          <p><i>- John Doe -</i></p>
+        </div>
+        <div class="addon-column  blog-news">
+          <h2>BLOG NEWS</h2>
+          <div class="news-item  clearfix">
+            <time datetime="04-01">APR 01</time>
+            <a href="#"><h3>Nice &amp; clean. The best for you blog!</h3></a>
+            <p>Vivamus metus turpis, bibendum vitae euismod vel</p>
+          </div>
+          <div class="news-item  clearfix">
+            <time datetime="04-01">APR 01</time>
+            <a href="#"><h3>What an Ecommerce theme!</h3></a>
+            <p>Vulputate vel nibh. Class aptent taciti sociosqu ad litora</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <div class="social-wrapper">
+        <div class="container  social-container  clearfix">
+          <div class="social-column  text-column">
+            <h3>TEXT WIDGET</h3>
+            <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+          </div>
+          <div class="social-column  twitter-column">
+            <h3>TWITTER WIDGET</h3>
+            <p><a href="#">@ericafustero</a> Why thank you. Your work looks awesome by the way! <a href="#">@treemelody</a></p>
+            <span>19 days ago</span>
+            <p><a href="#">@roymarvelous</a> You can seek a refund through TF if it is not as advertised - but it is :)</p>
+            <span>21 days ago</span>
+          </div>
+          <div class="social-column  flickr-column">
+            <h3>FLICKR WIDGET</h3>
+            <div class="flickr-container">
+              <a href="#"><img src="img/flickr01.jpg" alt="Flickr image 01" width="76" height="56"></a>
+              <a href="#"><img src="img/flickr02.jpg" alt="Flickr image 02" width="76" height="56"></a>
+              <a href="#"><img src="img/flickr03.jpg" alt="Flickr image 03" width="76" height="56"></a>
+              <a href="#"><img src="img/flickr04.jpg" alt="Flickr image 04" width="76" height="56"></a>
+              <a href="#"><img src="img/flickr05.jpg" alt="Flickr image 05" width="76" height="56"></a>
+              <a href="#"><img src="img/flickr06.jpg" alt="Flickr image 06" width="76" height="56"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="share-wrapper">
+        <div class="container  clearfix">
+          <form class="subscribe  clearfix" method="post">
+            <input type="text" id="input-email">
+            <label for="input-email">Enter email for newsletter</label>
+            <div class="subscribe-button-container">
+              <input class="subscribe-button" type="submit" value="Send">
+            </div>
+          </form>
+          <div class="share-buttons">
+            <ul>
+              <li>
+                <a href="#">
+                  <svg class="share-icon  facebook-icon" height="19.19" viewbox="0 0 9 19.19" width="9" >
+					          <use xlink:href="#facebook-icon"></use>
+                  </svg>
+                Facebook</a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="share-icon  twitter-icon" height="15.9" viewbox="0 0 19.188 15.9" width="19.188" >
+					          <use xlink:href="#twitter-icon"></use>
+                  </svg>
+                Twitter</a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="share-icon  googleplus-icon" height="16.28" viewbox="0 0 19.18 16.28" width="19.18" >
+					          <use xlink:href="#googleplus-icon"></use>
+                  </svg>
+                Google Plus</a>
+              </li>
+              <li>
+                <a href="#"><svg class="share-icon  linkedin-icon" height="18.59" viewbox="0 0 17.97 18.59" width="17.97" >
+					        <use xlink:href="#linkedin-icon"></use>
+                </svg>
+              LinkedIn</a>
+            </li>
+              <li>
+                <a href="#">
+                  <svg class="share-icon  flickr-icon" height="7.82" viewbox="0 0 19.21 7.82" width="19.21" >
+					          <use xlink:href="#flickr-icon"></use>
+                  </svg>
+                  Flickr</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottomline-wrapper">
+        <div class="container  clearfix">
+          <div class="copyright">
+            Copyright © Fooseshoes 2013.<br>
+            Designed by <a href="#">EnzoLiVolti</a>.
+          </div>
+          <nav class="footer-menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Faqs</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
